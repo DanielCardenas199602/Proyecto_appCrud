@@ -1,0 +1,236 @@
+/*media queries*/
+@media (max-width:1680px) {
+    .layout {
+        flex-direction: column;
+        left: 60px;
+    }
+}
+
+@media (max-width:1600px) {
+    .layout {
+        flex-direction: column;
+        left: 96px;
+    }
+}
+
+
+@media (max-width:1490px) {
+    .layout {
+        flex-direction: column;
+        left: 110px;
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+    }
+}
+
+@media (max-width:1280px) {
+    .layout {
+        flex-direction: column;
+        left: 110px;
+        width: 100%;
+        max-width: 880px;
+        height: auto;
+    }
+}
+
+@media (max-width:1176px) {
+    .layout {
+        flex-direction: column;
+        left: 110px;
+        width: 100%;
+        max-width: 770px;
+        height: auto;
+    }
+}
+
+@media (max-width:1024px) {
+    .layout {
+        flex-direction: column;
+        left: 120px;
+        width: 100%;
+        max-width: 630px;
+        height: auto;
+    }
+}
+
+@media (max-width:896px) {
+    .layout {
+        flex-direction: column;
+        left: 120px;
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+    }
+}
+
+@media (max-width:850px) {
+    .layout {
+        flex-direction: column;
+        left: 120px;
+        width: 100%;
+        max-width: 510px;
+        height: auto;
+    }
+}
+
+
+@media (max-width:790px) {
+    .layout {
+        flex-direction: column;
+        left: 120px;
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+    }
+}
+
+@media (max-width:690px) {
+    .layout {
+        flex-direction: column;
+        left: 100px;
+        width: 100%;
+        max-width: 410px;
+        height: auto;
+    }
+
+    .Area_de_botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centra horizontalmente */
+    position: absolute;
+    top: 80px;
+    left: 2px;
+    width: 200px;
+    min-height: 728px;
+    /* un poco más compacta */
+    height: auto;
+    /* ocupa toda la altura de la ventana */
+    background-color: #688291;
+    padding: 20px;
+    /* espacio interno */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    /* sombra para dar profundidad */
+    border-radius: 8px;
+    /* esquinas redondeadas */
+}
+
+.botones_db {
+    width: 160px;
+    height: 40px;
+    margin: 8px;
+    /* quitamos margin-bottom, usamos gap */
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f4f7;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+}
+
+@media (max-width:590px) {
+    .layout {
+        flex-direction: column;
+        left: 60px;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+    }
+
+    .Area_de_botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centra horizontalmente */
+    position: absolute;
+    top: 80px;
+    left: 2px;
+    width: 120px;
+    min-height: 728px;
+    /* un poco más compacta */
+    height: auto;
+    /* ocupa toda la altura de la ventana */
+    background-color: #688291;
+    padding: 20px;
+    /* espacio interno */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    /* sombra para dar profundidad */
+    border-radius: 8px;
+    /* esquinas redondeadas */
+}
+
+.botones_db {
+    width: 100px;
+    height: 40px;
+    margin: 8px;
+    /* quitamos margin-bottom, usamos gap */
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f4f7;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+}
+
+
+
+@media (max-width:490px) {
+    .layout {
+        flex-direction: column;
+        left: 0;
+        width: 100%;
+        max-width: 370px;
+        height: auto;
+        margin-top: 240px; /* espacio debajo del menú fijo */
+    }
+
+    .Area_de_botones {
+        display: flex;
+        flex-direction: row;     
+        justify-content: center; 
+        flex-wrap: wrap;         
+        gap: 10px;
+        width: 95%;
+        min-height: 200px;
+        background-color: #688291;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        position: absolute;   /* menú fijo arriba */
+        top: 100px;            /* siempre en la parte superior */
+        left: 10PX;
+        z-index: 1000;     /* se mantiene encima del layout */
+    }
+
+    .caja_botones {
+        display: flex;
+        flex-direction: row;     
+        justify-content: center; 
+        flex-wrap: wrap;         
+        gap: 8px;                
+        width: 100%;             
+        margin: 0;               
+    }
+
+    .botones_db {
+        flex: 1 1 100px;         
+        max-width: 120px;        
+        height: 50px;
+        border: none;
+        border-radius: 6px;
+        background-color: #f0f4f7;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .botones_db:hover {
+        background-color: #d9e2ec;
+    }
+}

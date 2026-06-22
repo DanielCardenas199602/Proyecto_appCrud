@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #172c63;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+    /*Espacio entre columnas*/
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 65px;
+    left: 28px;
+}
+
+.caja_formulario {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.Area_de_botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centra horizontalmente */
+    position: absolute;
+    top: 80px;
+    left: 2px;
+    width: 250px;
+    min-height: 728px;
+    /* un poco más compacta */
+    height: auto;
+    /* ocupa toda la altura de la ventana */
+    background-color: #688291;
+    padding: 20px;
+    /* espacio interno */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    /* sombra para dar profundidad */
+    border-radius: 8px;
+    /* esquinas redondeadas */
+}
+
+.caja_botones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* más espacio entre botones */
+    width: 100%;
+    /* que ocupen el ancho disponible */
+    align-items: center;
+    /* centra los botones dentro de la caja */
+    margin-top: 76px;
+}
+
+.botones_db {
+    width: 190px;
+    height: 40px;
+    margin: 8px;
+    /* quitamos margin-bottom, usamos gap */
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f4f7;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botones_db:hover {
+    background-color: #d9e2ec;
+    /* efecto hover */
+}
+
+.botones_db:hover {
+    background-color: #172c63;
+    color: white;
+    border: none;
+}
+
+
+.drop-zone {
+    margin-top: 10px;
+    min-height: 120px;
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    /* apila contenido verticalmente */
+    align-items: flex-start;
+    /* alinea a la izquierda */
+    justify-content: flex-start;
+    color: white;
+    text-align: left;
+    padding: 15px;
+    background-color: rgba(104, 130, 145, 0.8);
+    /*color de fondo con transparencia y valores rgb */
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+
+.drop-zone:hover {
+
+    background-color: rgba(64, 79, 88, 0.8);
+    /*color de fondo con transparencia y valores rgb */
+
+}
+
+
+#file-list {
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+#file-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+footer {
+    background-color: #172c63;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 130px;
+    position: relative;
+    top: 190PX;
+}
+
