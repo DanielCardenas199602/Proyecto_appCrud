@@ -6,7 +6,7 @@ async function CrateTranporte() {
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
         // 🚀 Fase test: generar cuenta temporal de Ethereal
         const testAccount = await nodemailer.createTestAccount();
-         console.log("Cuenta de prueba Ethereal:", testAccount);
+        console.log("Cuenta de prueba Ethereal:", testAccount);
 
         return nodemailer.createTransport({
             host: process.env.SMTP_HOST,
@@ -32,8 +32,8 @@ async function CrateTranporte() {
         });
     }
 
-    
-    
+
+
 }
 
 module.exports = CrateTranporte;
