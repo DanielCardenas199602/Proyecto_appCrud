@@ -15,7 +15,7 @@ conexion();
 
 //crear servidor de node y escuchar peticiones http
 const app = express();
-const puerto = process.env.RAILWAY_TCP_PROXY_PORT || process.env.PORT || 3300;
+const puerto = process.env.PORT || 3300;
 
 // configurar cors
 app.use(cors());

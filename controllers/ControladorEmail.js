@@ -1,6 +1,8 @@
-const { Resend } = require("resend");
+const nodemailer = require("nodemailer");
+const createTransporter = require("../config/ConfigEmail");
 
 const Enviarcorreo = async (req, res) => {
+
   try {
     const { nombre, correo, comentarios } = req.body;
 
@@ -12,29 +14,36 @@ const Enviarcorreo = async (req, res) => {
       return res.status(400).json({ mensaje: "Debes adjuntar al menos un archivo PDF/XML" });
     }
 
-    const resend = new Resend(process.env.SMTP_PASS);
+ console.log("Body:", req.body);
+console.log("Files:", req.files);
 
-    const attachments = req.files.map(file => ({
+    const archivos = req.files.map(file => ({
       filename: file.originalname,
-      content: file.buffer
+      content: file.buffer,
+      mimetype: file.mimetype
     }));
 
-    await resend.emails.send({
-      from: "onboarding@resend.dev",
+    const transporter = await createTransporter();
+
+    const info = await transporter.sendMail({
+      from: "no-reply@local-app.com",
       to: correo,
       subject: `Archivos para ${nombre}`,
       text: comentarios || "Se adjuntan los archivos solicitados",
-      attachments
+      attachments: archivos
     });
 
     return res.status(200).json({
-      mensaje: "✅ Correo enviado exitosamente"
+      mensaje: "✅ Correo enviado exitosamente",
+      vista: nodemailer.getTestMessageUrl(info)
     });
-
   } catch (error) {
-    return res.status(500).json({
-      mensaje: "❌ Error al enviar el correo",
-      error: error.message
+    return res.status(500).json
+    ({ mensaje: "❌ Error al enviar el correo", 
+       error: error.message ,
+       stack: error.stack
+
+
     });
   }
 };
