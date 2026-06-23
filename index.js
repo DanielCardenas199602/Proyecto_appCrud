@@ -34,10 +34,7 @@ app.use("/api/Ruta-EnviarCorreo", RutaProyecto );
 
 
 // Exponer API_URL al frontend (dinámico desde .env)
-app.get("/config.js", (req, res) => {
-  res.type("application/javascript");
-  res.send(`window.API_URL = "${process.env.API_URL}";`);
-});
+
 
 //Servir archivos estáticos (frontend)  
 app.use(express.static(path.join(__dirname, "public")));// para servir los archivos estáticos del frontend desde la carpeta "public"

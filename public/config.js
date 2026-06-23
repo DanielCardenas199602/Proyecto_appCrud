@@ -1,0 +1,1 @@
+window.API_URL = "https://proyectoappcrud-production.up.railway.app/api";
