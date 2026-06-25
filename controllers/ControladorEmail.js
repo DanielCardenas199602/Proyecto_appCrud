@@ -26,7 +26,7 @@ console.log("Files:", req.files);
     const transporter = await createTransporter();
 
     const info = await transporter.sendMail({
-      from: "dacrp1996@gmail.com",
+      from: "no-reply@local-app.com",
       to: correo,
       subject: `Archivos para ${nombre}`,
       text: comentarios || "Se adjuntan los archivos solicitados",
