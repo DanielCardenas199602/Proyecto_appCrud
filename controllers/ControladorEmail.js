@@ -24,14 +24,16 @@ console.log("Files:", req.files);
     }));
 
     const transporter = await createTransporter();
+    console.log("Transporter creado, intentando enviar...");
 
     const info = await transporter.sendMail({
-      from: "no-reply@local-app.com",
+      from: "dacrp1996@gmail.com",
       to: correo,
       subject: `Archivos para ${nombre}`,
       text: comentarios || "Se adjuntan los archivos solicitados",
       attachments: archivos
     });
+    console.log("Correo enviado:", info.messageId);
 
     return res.status(200).json({
       mensaje: "✅ Correo enviado exitosamente",
