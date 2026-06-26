@@ -14,14 +14,16 @@ const Enviarcorreo = async (req, res) => {
       return res.status(400).json({ mensaje: "Debes adjuntar al menos un archivo PDF/XML" });
     }
 
- console.log("Body:", req.body);
-console.log("Files:", req.files);
+    console.log("Body:", req.body);
+    console.log("Número de archivos:", req.files.length);
 
     const archivos = req.files.map(file => ({
       filename: file.originalname,
       content: file.buffer,
       mimetype: file.mimetype
     }));
+
+    console.log("Archivos procesados:", archivos.length);
 
     const transporter = await createTransporter();
     console.log("Transporter creado, intentando enviar...");
@@ -33,19 +35,20 @@ console.log("Files:", req.files);
       text: comentarios || "Se adjuntan los archivos solicitados",
       attachments: archivos
     });
+
     console.log("Correo enviado:", info.messageId);
 
     return res.status(200).json({
       mensaje: "✅ Correo enviado exitosamente",
       vista: nodemailer.getTestMessageUrl(info)
     });
+
   } catch (error) {
-    return res.status(500).json
-    ({ mensaje: "❌ Error al enviar el correo", 
-       error: error.message ,
-       stack: error.stack
-
-
+    console.error("ERROR REAL:", error.message);
+    return res.status(500).json({
+      mensaje: "❌ Error al enviar el correo",
+      error: error.message,
+      stack: error.stack
     });
   }
 };
