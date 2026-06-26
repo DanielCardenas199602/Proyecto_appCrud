@@ -1,10 +1,11 @@
 # Imagen base de Node
+# Imagen base de Node
 FROM node:20-alpine
 
 # Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-#Copiar dependencias primero (mejor caché)
+# Copiar dependencias primero (mejor caché)
 COPY package*.json ./
 
 # Instalar dependencias
@@ -14,7 +15,7 @@ RUN npm install --only=production
 COPY . .
 
 # Exponer el puerto
-EXPOSE 3300
+EXPOSE 8080
 
 # Comando para arrancar la app
 CMD ["node", "index.js"]
