@@ -95,7 +95,7 @@ textarea {
     align-items: center;
     /* centra horizontalmente */
     position: absolute;
-    top: 80px;
+    top: 94px;
     left: 2px;
     width: 250px;
     min-height: 728px;
@@ -120,7 +120,7 @@ textarea {
     /* que ocupen el ancho disponible */
     align-items: center;
     /* centra los botones dentro de la caja */
-    margin-top: 87px;
+    margin-top: 76px;
 }
 
 .botones_db {
