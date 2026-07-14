@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./app.css">
     <link rel="stylesheet" type="text/css" href="./responsive.css">
     <script src="/config.js" defer></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
     <script type="text/javascript" src="./main.js" defer></script>
     <script type="text/javascript" src="./drop.js" defer></script>
     <script type="text/javascript" src="./email.js" defer></script>
@@ -23,7 +24,7 @@
             <li><a href="#">Servicios</a></li>
             <li><a href="#">Contacto</a></li>
         </ul>
-         
+
     </header>
 
     <main class="layout">
@@ -32,7 +33,7 @@
 
             <form id="formCorreo" enctype="multipart/form-data">
 
-                 <!--<label for="">Id</label>
+                <!--<label for="">Id</label>
                 <input type="text" id="identificador">-->
 
                 <label for="">Nombre</label>
@@ -62,11 +63,32 @@
     </main>
 
 
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <aside class="Area_de_botones">
 
         <div class="caja_botones">
 
-   
+
 
             <button class="botones_db" id="BTN_agregar">Agregar</button>
             <button class="botones_db" id="BTN_consultar">Consultar</button>
@@ -76,8 +98,8 @@
 
             <button class="botones_db" type="submit" id="envio">Enviar Archivos</button>
             <button class="botones_db" type="button" id="clear-all">Eliminar todos archivos</button>
-            
-       
+
+
 
         </div>
 
@@ -89,7 +111,7 @@
             <p>Contacto: info@ejemplo.com</p>
             <p>Teléfono: +1 234 567 890</p>
             <p>Derechos reservados &copy; 2024</p>
-                
+
 
         </div>
     </footer>
