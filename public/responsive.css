@@ -299,7 +299,7 @@
         width: 100%;
         max-width: 370px;
         height: auto;
-        margin-top: 297px; /* espacio debajo del menú fijo */
+        margin-top: 320px; /* espacio debajo del menú fijo */
     }
 
     .Area_de_botones {
@@ -315,7 +315,7 @@
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         border-radius: 8px;
         position: absolute;   /* menú fijo arriba */
-        top: 230px;            /* siempre en la parte superior */
+        top: 198px;            /* siempre en la parte superior */
         left: 10PX;
         z-index: 1000;     /* se mantiene encima del layout */
     }
