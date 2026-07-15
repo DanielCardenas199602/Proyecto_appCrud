@@ -290,3 +290,60 @@
         background-color: #d9e2ec;
     }
 }
+
+
+@media (max-width:320px) {
+    .layout {
+        flex-direction: column;
+        left: 0;
+        width: 100%;
+        max-width: 370px;
+        height: auto;
+        margin-top: 320px; /* espacio debajo del menú fijo */
+    }
+
+    .Area_de_botones {
+        display: flex;
+        flex-direction: row;     
+        justify-content: center; 
+        flex-wrap: wrap;         
+        gap: 10px;
+        width: 95%;
+        min-height: 200px;
+        background-color: #688291;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        position: absolute;   /* menú fijo arriba */
+        top: 230px;            /* siempre en la parte superior */
+        left: 10PX;
+        z-index: 1000;     /* se mantiene encima del layout */
+    }
+
+    .caja_botones {
+        display: flex;
+        flex-direction: row;     
+        justify-content: center; 
+        flex-wrap: wrap;         
+        gap: 8px;                
+        width: 100%;             
+        margin: 0;               
+    }
+
+    .botones_db {
+        flex: 1 1 100px;         
+        max-width: 120px;        
+        height: 50px;
+        border: none;
+        border-radius: 6px;
+        background-color: #f0f4f7;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .botones_db:hover {
+        background-color: #d9e2ec;
+    }
+}
