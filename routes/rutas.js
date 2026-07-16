@@ -24,7 +24,7 @@ router.post("/enviarCorreo", upload.array("archivos"), Enviarcorreo);
 //nuevas rutas de registros de envío
 router.get("/registros", obtenerRegistro);
 router.delete("/registros/:id", eliminarRegistro);
-router.delete("/registros", eliminarTodosRegistros);
+router.delete("/registros", eliminarTodosRegistro);
 
 
 //EXPORTAMOS RUTAS
