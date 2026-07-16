@@ -62,6 +62,6 @@ const eliminarTodosRegistro = async (req, res) => {
 
 
 module.exports = { 
-obtenerRegistros, 
+obtenerRegistro, 
 eliminarRegistro, 
 eliminarTodosRegistros };
