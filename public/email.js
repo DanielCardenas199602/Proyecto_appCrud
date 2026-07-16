@@ -45,7 +45,7 @@ envioBTN.addEventListener('click', async (event) => {
 
 // cargar registros del modal 
 
-async function CargarRegistros() {
+async function cargarRegistros() {
 
   try {
 
