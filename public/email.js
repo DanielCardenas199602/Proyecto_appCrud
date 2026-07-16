@@ -42,3 +42,70 @@ envioBTN.addEventListener('click', async (event) => {
     envioBTN.textContent = "Enviar Archivos";
   }
 });
+
+// cargar registros del modal 
+
+async function CargarRegistros() {
+
+  try {
+
+    const res = await fetch(`${BASE_URL}/Ruta-Proyecto/registros`);
+    const registros = await res.json();
+
+    const tabla = document.getElementById("tabla-registros");
+
+    if (registros.length === 0) {
+      tabla.innerHTML = `<tr><td colspan="6" class="text-center text-muted">No hay registros aún</td></tr>`;
+      return;
+    }
+
+    tabla.innerHTML = registros.map((r, index) => `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${r.nombre}</td>
+        <td>${r.correo}</td>
+        <td>${r.archivos.map(a => a.nombre).join(", ")}</td>
+        <td>${new Date(r.fecha).toLocaleString()}</td>
+        <td>
+          <button class="btn btn-sm btn-danger btn-eliminar-registro" data-id="${r._id}">✕</button>
+        </td>
+      </tr>
+    `).join("");
+
+    // Agregar eventos a los botones de eliminar individuales
+    document.querySelectorAll(".btn-eliminar-registro").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const id = btn.getAttribute("data-id");
+        if (confirm("¿Eliminar este registro?")) {
+          await fetch(`${BASE_URL}/Ruta-Proyecto/registros/${id}`, { method: "DELETE" });
+          cargarRegistros();
+        }
+      });
+    });
+
+
+
+
+
+  } catch (error) {
+    console.error("Error al cargar registros:", error);
+
+  }
+
+}
+
+// Botón eliminar todos
+document.getElementById("btn-eliminar-todos")?.addEventListener("click", async () => {
+  if (confirm("¿Eliminar TODOS los registros? Esta acción no se puede deshacer.")) {
+    try {
+      await fetch(`${BASE_URL}/Ruta-Proyecto/registros`, { method: "DELETE" });
+      cargarRegistros();
+    } catch (error) {
+      console.error("Error al eliminar todos:", error);
+    }
+  }
+});
+
+
+// Cargar registros cuando se abre el modal
+document.getElementById("exampleModal")?.addEventListener("show.bs.modal", cargarRegistros);
