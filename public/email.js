@@ -61,12 +61,12 @@ async function cargarRegistros() {
 
     tabla.innerHTML = registros.map((r, index) => `
       <tr>
-        <td>${index + 1}</td>
-        <td>${r.nombre}</td>
-        <td>${r.correo}</td>
-        <td>${r.archivos.map(a => a.nombre).join(", ")}</td>
-        <td>${new Date(r.fecha).toLocaleString()}</td>
-        <td>
+        <td data-label="#">${index + 1}</td>
+        <td data-label="Nombre">${r.nombre}</td>
+        <td data-label="Correo">${r.correo}</td>
+        <td data-label="Archivos">${r.archivos.map(a => a.nombre).join(", ")}</td>
+        <td data-label="Fecha">${new Date(r.fecha).toLocaleString()}</td>
+        <td data-label="Eliminar">
           <button class="btn btn-sm btn-danger btn-eliminar-registro" data-id="${r._id}">✕</button>
         </td>
       </tr>

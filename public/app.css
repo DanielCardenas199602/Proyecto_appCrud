@@ -205,3 +205,52 @@ footer {
     top: 190PX;
 }
 
+
+
+@media (max-width: 884px) {
+    .tabla-registros-responsive thead {
+        display: none;
+    }
+
+    .tabla-registros-responsive,
+    .tabla-registros-responsive tbody,
+    .tabla-registros-responsive tr {
+        display: block;
+        width: 100%;
+    }
+
+    .tabla-registros-responsive tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px;
+        margin-bottom: 16px;
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+    }
+
+    .tabla-registros-responsive td {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: left;
+        border: none;
+        padding: 4px 0;
+    }
+
+    .tabla-registros-responsive td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #688291;
+        display: block;
+        font-size: 0.8rem;
+    }
+
+    .tabla-registros-responsive td[colspan] {
+        display: block;
+        text-align: center;
+    }
+
+    .tabla-registros-responsive td[colspan]::before {
+        content: none;
+    }
+}
